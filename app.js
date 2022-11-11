@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const exphbs = require('express-handlebars')
 const mongoose = require('mongoose') // 載入mongoose
 
 // 僅在非正式環境時，使用dotenv
@@ -20,8 +21,11 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected')
 })
+
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 app.get('/', (req, res) => {
-  res.send('Hello')
+  res.render('index')
 })
 
 app.listen(port, () => {

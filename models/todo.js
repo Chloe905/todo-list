@@ -1,4 +1,3 @@
-const { mongo } = require('mongoose')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const todoSchema = new Schema({
@@ -7,7 +6,7 @@ const todoSchema = new Schema({
     required: true
   },
   done: {
-    type: boolean
+    type: Boolean
   }
 })
 

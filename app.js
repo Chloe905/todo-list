@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 const db = mongoose.connection
 
 db.on('error', () => {
-  console.error('mongodb error')
+  console.log('mongodb error')
 })
 
 db.once('open', () => {

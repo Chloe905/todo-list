@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
 const mongoose = require('mongoose') // 載入mongoose
-
+const Todo = require('./models/todo')
 // 僅在非正式環境時，使用dotenv
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -25,7 +25,10 @@ db.once('open', () => {
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 app.get('/', (req, res) => {
-  res.render('index')
+  Todo.find()
+    .lean()
+    .then(todos => res.render('index', { todos }))
+
 })
 
 app.listen(port, () => {

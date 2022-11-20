@@ -8,11 +8,14 @@
         <h4 style="vertical-align: middle;display:inline">{{this.name}}</h4>
       </div>
       <div class="col-auto">
-        <a class="btn circle" href="./todos/{{this._id}}"><i class="fa-solid fa-circle-info"></i></a>
-        <a class="btn circle" href="./todos/{{this._id}}/edit"><i class="fa-solid fa-pen"></i></a>
+        <a class="btn rounded-circle border border-1 " href="./todos/{{this._id}}"><i class="fa-solid fa-circle-info"
+            style="color:#6C8AA8;"></i></a>
+        <a class="btn rounded-circle border border-1" href="./todos/{{this._id}}/edit"><i class="fa-solid fa-pen"
+            style="color:#AD8EBD;"></i></a>
         <form action="./todos/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
-          <button class="btn circle" type="submit" onclick="return confirm(`確定要刪除${this.name}?`)"><i
-              class="fa-solid fa-trash"></i></button>
+          <button class="btn rounded-circle border border-1" type="submit"
+            onclick="return confirm(`確定要刪除${this.name}?`)"><i class="fa-solid fa-trash"
+              style="color:#C96C4B;"></i></button>
         </form>
       </div>
 

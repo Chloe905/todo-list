@@ -14,8 +14,8 @@
     <input class="form-control" type="text" aria-label="Text input with checkbox" placeholder="name" name="name"
       value="{{ todo.name }}" disabled>
 
-    <a class="btn btn-success circle" href="/todos/{{ todo._id }}/edit"><i class="fa-solid fa-pen"></i></a>
-    <button class="btn circle btn-danger" type="submit" onclick="return confirm(`確定要刪除${this.name}?`)"><i
+    <a class="btn btn-success" href="/todos/{{ todo._id }}/edit"><i class="fa-solid fa-pen"></i></a>
+    <button class="btn btn-danger" type="submit" onclick="return confirm(`確定要刪除${this.name}?`)"><i
         class="fa-solid fa-trash"></i></button>
   </div>
 </form>

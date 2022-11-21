@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const router = require('./routes') // 引用路由器，路徑不用再加上 /index，因為express會自動去找 router下叫index的檔案
 require('./config/mongoose')
-require('dotenv').config()
+
 const PORT = process.env.PORT || 3000
 const app = express()
 
